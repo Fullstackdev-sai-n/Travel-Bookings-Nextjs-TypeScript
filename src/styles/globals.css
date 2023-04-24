@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,6 +7,16 @@
 	--foreground-rgb: 0, 0, 0;
 	--background-start-rgb: 214, 219, 220;
 	--background-end-rgb: 255, 255, 255;
+	--text-gray-light: #868686;
+	--text-gray-dark: #535353;
+	--black: #000000;
+	--white: #ffffff;
+	--primary: #6f57e9;
+	--secondary: #9747ff;
+	--form-shadow: 296px 536px 245px rgba(21, 31, 72, 0.01),
+		167px 302px 207px rgba(21, 31, 72, 0.05),
+		74px 134px 153px rgba(21, 31, 72, 0.09),
+		19px 34px 84px rgba(21, 31, 72, 0.1), 0px 0px 0px rgba(21, 31, 72, 0.1);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,6 +28,7 @@
 }
 
 body {
+	font-family: "Figtree", sans-serif;
 	color: rgb(var(--foreground-rgb));
 	background: linear-gradient(
 			to bottom,
