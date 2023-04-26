@@ -19,6 +19,24 @@
 		19px 34px 84px rgba(21, 31, 72, 0.1), 0px 0px 0px rgba(21, 31, 72, 0.1);
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-image: url("../assets/calendar.svg");
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 24px 24px;
+	pointer-events: visible;
+	visibility: hidden;
+}
+
+@media (max-width: 360px) {
+	.progress-bar {
+		width: 40px;
+	}
+}
+
 @media (prefers-color-scheme: dark) {
 	:root {
 		--foreground-rgb: 255, 255, 255;

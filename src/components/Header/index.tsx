@@ -5,8 +5,8 @@ import DollarSquare from "../../assets/dollarsquare.svg";
 import Button from "@/elements/Button";
 
 const Header = () => {
-	const [isLoggedIn, setIsLoggedIn] = useState(false);
-	const [isBooking, setIsBooking] = useState(true);
+	const [isLoggedIn, setIsLoggedIn] = useState(true);
+	const [isBooking, setIsBooking] = useState(false);
 	return (
 		<header>
 			<nav className="sm:flex justify-between">

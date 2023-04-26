@@ -1,5 +1,6 @@
 import Button from "@/elements/Button";
 import Typography from "@/elements/Typography";
+import Link from "next/link";
 import React from "react";
 
 interface PriceDetails {
@@ -23,11 +24,13 @@ const PriceDetails: React.FC<PriceDetails> = ({
 				<Typography className="text-black m-auto" tag="title01bold">
 					{title}
 				</Typography>
-				<Button className="text-sm font-normal ml-5" variant="starBtn">
-					Known shipper
+				<Button
+					className="text-sm font-normal ml-5 grid-starBtn place-items-center gap-1 px-4 py-1"
+					variant="starBtn">
+					<span className="">Known shipper</span>
 				</Button>
 			</div>
-			<div className="flex justify-between mb-9 border-b-2 border-primary pb-5">
+			<div className="flex justify-between mb-9 border-b-primary pb-5">
 				<Typography className="text-graySecondary m-auto" tag="title03">
 					Seller’s Quote
 				</Typography>
@@ -51,17 +54,20 @@ const PriceDetails: React.FC<PriceDetails> = ({
 					${insurancePrice}
 				</Typography>
 			</div>
-			<div className="flex justify-between mb-6 border-b-2 border-primary pb-5">
+			<div className="flex justify-between mb-6 border-b-primary pb-5">
 				<Typography className="text-graySecondary m-auto" tag="title03">
 					Based on the items cost
 				</Typography>
 			</div>
 			<div className="flex justify-between mb-4">
 				<Typography className="text-graySecondary m-auto" tag="title03">
-					Add a promo code
+					Add a{" "}
+					<Link href="#" className="text-blue-600">
+						promo code
+					</Link>
 				</Typography>
 			</div>
-			<div className="flex justify-between mb-9 border-b-2 border-primary pb-5">
+			<div className="flex justify-between mb-9 border-b-primary pb-5">
 				<Typography className="text-graySecondary m-auto" tag="title03">
 					Platform fee
 				</Typography>
@@ -78,7 +84,7 @@ const PriceDetails: React.FC<PriceDetails> = ({
 					${totalPrice}
 				</Typography>
 			</div>
-			<Button className="grid place-items-center py-3" variant="secondary">
+			<Button className="grid place-items-center py-2" variant="secondary">
 				<Typography className="text-white m-auto" tag="title01bold">
 					Checkout
 				</Typography>

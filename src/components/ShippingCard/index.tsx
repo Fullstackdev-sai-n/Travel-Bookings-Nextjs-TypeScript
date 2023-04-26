@@ -9,9 +9,8 @@ import Prime from "../../assets/prime.svg";
 import Icon from "@/elements/Icon";
 import StarRating from "@/elements/Rating";
 
-interface ShoppingCardProps {
+interface ShippingCardProps {
 	isVariant: Boolean;
-	heading: string;
 	indicatorText: string;
 	estDays: Number;
 	totalPrice: Number;
@@ -19,7 +18,7 @@ interface ShoppingCardProps {
 	destinationText: string;
 }
 
-const ShoppingCard: React.FC<ShoppingCardProps> = ({
+const ShippingCard: React.FC<ShippingCardProps> = ({
 	isVariant,
 	indicatorText,
 	estDays,
@@ -28,15 +27,13 @@ const ShoppingCard: React.FC<ShoppingCardProps> = ({
 	destinationText,
 }) => {
 	return (
-		<div
-			style={{ gridTemplateColumns: "1fr 0.2fr" }}
-			className="shadow-shoppingCard py-5 px-7 rounded-xl block sm:grid bg-white mb-5">
+		<div className="grid-cols-shippingC shadow-shippingCard py-5 px-7 rounded-xl block gap-4 sm:grid bg-white mb-5">
 			<div className="sm:border-r-primary">
 				<div className="mb-5 flex justify-between max-w-xs">
 					<Button variant="indicator" bestValue={isVariant}>
 						{indicatorText}
 					</Button>
-					<Typography className="text-red mt-4 ml-4" tag="body">
+					<Typography className="text-red mt-4 ml-4" tag="captions">
 						Express
 					</Typography>
 					<div className="w-0.5 h-4 mt-4 ml-4  bg-grayPrimary"></div>
@@ -92,4 +89,4 @@ const ShoppingCard: React.FC<ShoppingCardProps> = ({
 	);
 };
 
-export default ShoppingCard;
+export default ShippingCard;

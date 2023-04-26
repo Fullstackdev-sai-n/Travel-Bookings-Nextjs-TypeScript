@@ -61,12 +61,20 @@ const Typography: React.FC<TypographyProps> = ({
 		color: color,
 	};
 
-	const HeadingTag = tag.includes("title")
+	const HeadingTag = tag.match("title")
 		? "div"
 		: tag.includes("captions")
 		? "div"
-		: tag.includes("body")
+		: tag.match("body")
 		? "div"
+		: tag.match("h1")
+		? "h1"
+		: tag.match("h2")
+		? "h2"
+		: tag.match("h3")
+		? "h3"
+		: tag.match("h4")
+		? "h4"
 		: tag;
 
 	return (

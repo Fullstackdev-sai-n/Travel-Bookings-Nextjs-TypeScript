@@ -25,38 +25,38 @@ const Button: React.FC<ButtonProps> = ({
 	const getButtonClasses = (dynamicClass: any) => {
 		switch (variant) {
 			case "primary":
-				return "bg-primary text-white rounded-xl";
+				return "py-2 px-4 bg-primary text-white rounded-xl";
 			case "secondary":
-				return "bg-secondary text-white rounded-xl";
+				return "py-2 px-4 bg-secondary text-white rounded-xl";
 			case "outlined":
-				return "border-2 border-prime text-black rounded-xl font-bold";
+				return "py-2 px-4 border-2 border-prime text-black rounded-xl font-bold";
 			case "starBtn":
-				return "bg-grayPrimary rounder-full text-black rounded-full";
+				return "bg-grayPrimary text-black rounded-full flex";
 			case "indicator":
 				return dynamicClass
-					? "bg-indicator1 text-black rounded-xl"
-					: "bg-indicator2 text-black rounded-xl";
+					? "py-2 px-4 bg-indicator1 text-black rounded-xl"
+					: "py-2 px-4 bg-indicator2 text-black rounded-xl";
 			default:
-				return "bg-none text-white";
+				return "py-2 px-4 bg-none text-white";
 		}
 	};
 
 	return (
 		<button
-			className={`py-2 px-4 ${
-				variant === "indicator" && "flex"
+			className={`${
+				variant === "indicator" && "flex w-32 text-xs"
 			} ${getButtonClasses(bestValue)} ${className}`}
 			{...rest}>
 			{variant === "indicator" && (
 				<div
 					className={
 						bestValue
-							? `w-2 h-2 rounded-full bg-green-500 m-auto mr-3`
-							: `w-2 h-2 rounded-full bg-primary m-auto mr-3`
+							? `w-2 h-2 rounded-full bg-green-500 mr-3  mt-1`
+							: `w-2 h-2 rounded-full bg-primary mr-3 mt-1`
 					}></div>
 			)}
 			{variant === "starBtn" && (
-				<Icon imageClass="w-3 h-3 m-auto mr-3" src={Star} alt="star-icon" />
+				<Icon imageClass="w-3 h-3 mr-3" src={Star} alt="star-icon" />
 			)}
 			{children}
 		</button>

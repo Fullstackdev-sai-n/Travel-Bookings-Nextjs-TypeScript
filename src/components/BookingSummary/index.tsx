@@ -5,16 +5,33 @@ import Plane from "../../assets/Plane icon.svg";
 import Travel from "../../assets/icon-1.svg";
 import Weight from "../../assets/weightmeter.svg";
 import Load from "../../assets/Vector 3.svg";
-import AdOne from "../../assets/Frame 64.svg";
-import AdTwo from "../../assets/Xcover.svg";
 import SideTextIcon from "../SideTextIcon";
 import AdCard from "../AdCard";
-import PriceDetails from "../PriceDetails";
 
-const BookingSummary = () => {
+interface BookingSummaryProps {
+	startFrom: string;
+	destination: string;
+	weight: Number;
+	loadDimesions: string;
+	adOneSrc: string;
+	adOneTitle: string;
+	adTwoSrc: string;
+	adTwoTitle: string;
+}
+
+const BookingSummary: React.FC<BookingSummaryProps> = ({
+	startFrom,
+	destination,
+	weight,
+	loadDimesions,
+	adOneSrc,
+	adOneTitle,
+	adTwoSrc,
+	adTwoTitle,
+}) => {
 	return (
-		<>
-			{/* <div className="grid px-8 py-9 bg-white rounded-2xl shadow-primary">
+		<div className="grid gap-4">
+			<div className="grid px-8 py-9 bg-white rounded-2xl shadow-primary col-span-12">
 				<Typography className="text-black mb-7" tag="title01bold">
 					Booking Summary
 				</Typography>
@@ -24,18 +41,14 @@ const BookingSummary = () => {
 				<div className="flex justify-center mb-2">
 					<Icon imageClass="w-7 h-6" src={Plane} alt="plane-icon" />
 				</div>
-				<div
-					className="grid"
-					style={{ gridTemplateColumns: "100px 1fr 100px" }}>
+				<div className="grid grid-cols-bstravel">
 					<div className="col-span-1">
 						<SideTextIcon
 							src={Travel}
 							imageClass="w-9 h-6"
 							alt="Icon"
 							tag="title02semibold"
-							text="Delhi,
-                        110003 India
-                       "
+							text={startFrom}
 							textClass="text-black capitalize text-center"
 							block
 						/>
@@ -47,16 +60,14 @@ const BookingSummary = () => {
 							imageClass="w-9 h-6"
 							alt="Icon"
 							tag="title02semibold"
-							text="Shanghai
-                        200080, China
-                        "
+							text={destination}
 							textClass="text-black capitalize text-center"
 							block
 						/>
 					</div>
 				</div>
 			</div>
-			<div className="grid px-8 py-9 bg-white rounded-2xl shadow-primary ">
+			<div className="grid px-8 py-9 bg-white rounded-2xl shadow-primary col-span-12 sm:col-span-2">
 				<Typography
 					color="#5C5C5C"
 					className="text-black text-center mb-2"
@@ -68,22 +79,20 @@ const BookingSummary = () => {
 					imageClass="w-16 h-16"
 					alt="Icon"
 					tag="title02semibold"
-					text="114.21KG
-                        "
+					text={`${weight}KG
+					`}
 					textClass="text-black capitalize text-center"
 					block
 				/>
 			</div>
-			<div className="grid px-8 py-9 bg-white rounded-2xl shadow-primary ">
+			<div className="grid px-8 py-9 bg-white rounded-2xl shadow-primary col-span-12 sm:col-span-10">
 				<Typography
 					color="#5C5C5C"
 					className="text-black mb-2"
 					tag="title02semibold">
 					Load
 				</Typography>
-				<div
-					className="grid place-items-center grid-cols-2"
-					style={{ gridTemplateColumns: "1fr 1fr" }}>
+				<div className="grid place-items-center grid-cols-12 sm:grid-cols-2 grid-cols-bsLoad">
 					<div className="ml-auto">
 						<Typography
 							color="#5C5C5C"
@@ -107,29 +116,18 @@ const BookingSummary = () => {
 							color="#5C5C5C"
 							className="text-black mb-2 mt-2"
 							tag="title02semibold">
-							230 X 140 X 120 CM
+							{loadDimesions} CM
 						</Typography>
 					</div>
 				</div>
 			</div>
-			<AdCard
-				adSrc={AdOne}
-				adTitle="Seller: Primetime Worldwide"
-				imageClass="w-36 h-16"
-			/>
-			<AdCard
-				adSrc={AdTwo}
-				adTitle="Insurance:Xcover.com"
-				imageClass="w-64 h-16"
-			/> */}
-			<PriceDetails
-				sellerPrice="400"
-				insurancePrice="200"
-				platformFee="40"
-				totalPrice="640"
-				title="Price Details"
-			/>
-		</>
+			<div className="col-span-12 sm:col-span-6">
+				<AdCard adSrc={adOneSrc} adTitle={adOneTitle} imageClass="w-36 h-16" />
+			</div>
+			<div className="col-span-12 sm:col-span-6">
+				<AdCard adSrc={adTwoSrc} adTitle={adTwoTitle} imageClass="w-64 h-16" />
+			</div>
+		</div>
 	);
 };
 

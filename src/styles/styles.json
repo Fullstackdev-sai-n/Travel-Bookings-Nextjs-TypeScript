@@ -402,7 +402,6 @@
 			"type": "custom-fontStyle",
 			"value": {
 				"fontSize": 11,
-				"textDecoration": "none",
 				"fontFamily": "Figtree",
 				"fontWeight": 400,
 				"fontStyle": "normal",

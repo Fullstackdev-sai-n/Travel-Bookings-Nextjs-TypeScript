@@ -5,6 +5,9 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	IconSrc: string;
 	placeholderText: string;
 	inputClass?: string;
+	inputContainer?: string;
+	type: string;
+	value?: string;
 	onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -13,17 +16,23 @@ const CustomInput: React.FC<InputProps> = ({
 	placeholderText,
 	onChange,
 	inputClass,
+	inputContainer,
+	type,
+	value,
 	...props
 }) => {
 	const element = useRef(null);
 	return (
-		<div className="relative">
+		<div className={`relative z-50 px-7 ${inputContainer}`}>
 			<input
-				className={`w-32 sm:max-w-xs sm:w-full border-none outline-none h-14 text-gray-400 ml-9 font-normal text-xl ${inputClass}`}
+				className={`w-32 bg-none sm:max-w-xs md:w-full border-none outline-none h-14 text-gray-400 font-normal text-xl border-r-primary ${inputClass}`}
 				onChange={onChange}
+				type={type}
+				value={value}
+				placeholder=""
 				onFocus={(event) => {
 					if (event && element.current)
-						element.current.getElementsByTagName("title02")[0].style.display =
+						element.current.getElementsByTagName("div")[1].style.display =
 							"none";
 				}}
 				{...props}
