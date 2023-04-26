@@ -9,15 +9,44 @@ module.exports = {
 		"./src/**/*.{js,ts,jsx,tsx,mdx}",
 	],
 	theme: {
-		colors: {
-			primary: "#6f57e9",
-			secondary: "#9747ff",
-		},
 		extend: {
+			textColor: {
+				primary: "var(--primary)",
+				secondary: "var(--secondary)",
+				grayPrimary: "#D3B0FF",
+				graySecondary: "#808080",
+				grayLight: "var(--text-gray-light)",
+				red: "#FF0000",
+			},
 			backgroundImage: {
 				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
 				"gradient-conic":
 					"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+			},
+			backgroundColor: {
+				main: "#F8F9FD",
+				primary: "var(--primary)",
+				secondary: "var(--secondary)",
+				indicator1: "#AFFFAD",
+				indicator2: "#ADBFFF",
+				grayPrimary: "#D3B0FF",
+				lightBlue: "#EBE8FF",
+			},
+			borderColor: {
+				primary: "rgba(163, 163, 163, 0.4)",
+				secondary: "var(--secondary)",
+				prime: "var(--primary)",
+			},
+			borderWidth: {
+				primary: "1px",
+			},
+			boxShadow: {
+				primary:
+					"0px 196px 78px rgba(21, 31, 72, 0.01), 0px 110px 66px rgba(21, 31, 72, 0.05), 0px 49px 49px rgba(21, 31, 72, 0.09), 0px 12px 27px rgba(21, 31, 72, 0.1), 0px 0px 0px rgba(21, 31, 72, 0.1)",
+				secondary:
+					"14px 216px 86px rgba(21, 31, 72, 0.01), 8px 121px 73px rgba(21, 31, 72, 0.05), 3px 54px 54px rgba(21, 31, 72, 0.09), 1px 13px 30px rgba(21, 31, 72, 0.1), 0px 0px 0px rgba(21, 31, 72, 0.1)",
+				shoppingCard:
+					"39px 216px 88px rgba(0, 0, 0, 0.01), 22px 122px 74px rgba(0, 0, 0, 0.05), 10px 54px 55px rgba(0, 0, 0, 0.09), 2px 14px 30px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1)",
 			},
 		},
 	},

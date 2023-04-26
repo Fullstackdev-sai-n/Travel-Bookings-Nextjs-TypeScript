@@ -26,9 +26,10 @@ interface TypographyData {
 
 interface TypographyProps {
 	tag: String | any;
-	children: String;
+	children: String | any;
 	color?: String;
 	className?: String;
+	containerClass?: String | any;
 }
 
 const Typography: React.FC<TypographyProps> = ({
@@ -36,11 +37,10 @@ const Typography: React.FC<TypographyProps> = ({
 	color,
 	children,
 	className,
+	containerClass,
 }) => {
 	const typographyData: TypographyData | any = StylesJson.font;
 	const headingStyleData: any = typographyData[tag];
-	console.log(headingStyleData);
-	console.log("headingStyleData", headingStyleData);
 
 	if (!headingStyleData) {
 		return null;
@@ -61,10 +61,16 @@ const Typography: React.FC<TypographyProps> = ({
 		color: color,
 	};
 
-	const HeadingTag = tag;
+	const HeadingTag = tag.includes("title")
+		? "div"
+		: tag.includes("captions")
+		? "div"
+		: tag.includes("body")
+		? "div"
+		: tag;
 
 	return (
-		<div>
+		<div className={containerClass}>
 			<HeadingTag className={className} style={headingStyleProps}>
 				{children}
 			</HeadingTag>

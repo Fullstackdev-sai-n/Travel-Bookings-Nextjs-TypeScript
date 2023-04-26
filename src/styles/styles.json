@@ -30,7 +30,7 @@
 				"textCase": "none"
 			}
 		},
-		"h1 bold": {
+		"h1bold": {
 			"type": "custom-fontStyle",
 			"value": {
 				"fontSize": 48,
@@ -46,7 +46,7 @@
 				"textCase": "none"
 			}
 		},
-		"h1 semi bold": {
+		"h1semibold": {
 			"type": "custom-fontStyle",
 			"value": {
 				"fontSize": 48,
@@ -78,7 +78,7 @@
 				"textCase": "none"
 			}
 		},
-		"h2 bold": {
+		"h2bold": {
 			"type": "custom-fontStyle",
 			"value": {
 				"fontSize": 40,
@@ -94,7 +94,7 @@
 				"textCase": "none"
 			}
 		},
-		"h2 semi bold": {
+		"h2semibold": {
 			"type": "custom-fontStyle",
 			"value": {
 				"fontSize": 40,
@@ -126,7 +126,7 @@
 				"textCase": "none"
 			}
 		},
-		"h3 bold": {
+		"h3bold": {
 			"type": "custom-fontStyle",
 			"value": {
 				"fontSize": 33,
@@ -142,7 +142,7 @@
 				"textCase": "none"
 			}
 		},
-		"h3 semi bold": {
+		"h3semibold": {
 			"type": "custom-fontStyle",
 			"value": {
 				"fontSize": 33,
@@ -174,7 +174,7 @@
 				"textCase": "none"
 			}
 		},
-		"h4 bold": {
+		"h4bold": {
 			"type": "custom-fontStyle",
 			"value": {
 				"fontSize": 28,
@@ -190,7 +190,7 @@
 				"textCase": "none"
 			}
 		},
-		"h4 semi bold": {
+		"h4semibold": {
 			"type": "custom-fontStyle",
 			"value": {
 				"fontSize": 28,
@@ -222,7 +222,7 @@
 				"textCase": "none"
 			}
 		},
-		"title01 bold": {
+		"title01bold": {
 			"type": "custom-fontStyle",
 			"value": {
 				"fontSize": 23,
@@ -238,7 +238,7 @@
 				"textCase": "none"
 			}
 		},
-		"title01 semi bold": {
+		"title01semibold": {
 			"type": "custom-fontStyle",
 			"value": {
 				"fontSize": 23,
@@ -270,7 +270,7 @@
 				"textCase": "none"
 			}
 		},
-		"title02 bold": {
+		"title02bold": {
 			"type": "custom-fontStyle",
 			"value": {
 				"fontSize": 19,
@@ -286,7 +286,7 @@
 				"textCase": "none"
 			}
 		},
-		"title02 semi bold": {
+		"title02semibold": {
 			"type": "custom-fontStyle",
 			"value": {
 				"fontSize": 19,
@@ -318,7 +318,7 @@
 				"textCase": "none"
 			}
 		},
-		"title03 bold": {
+		"title03bold": {
 			"type": "custom-fontStyle",
 			"value": {
 				"fontSize": 16,
@@ -334,7 +334,7 @@
 				"textCase": "none"
 			}
 		},
-		"title03 semi bold": {
+		"title03semibold": {
 			"type": "custom-fontStyle",
 			"value": {
 				"fontSize": 16,
@@ -350,7 +350,7 @@
 				"textCase": "none"
 			}
 		},
-		"body": {
+		"bodymain": {
 			"type": "custom-fontStyle",
 			"value": {
 				"fontSize": 13,
@@ -366,7 +366,7 @@
 				"textCase": "none"
 			}
 		},
-		"body bold": {
+		"bodybold": {
 			"type": "custom-fontStyle",
 			"value": {
 				"fontSize": 13,
@@ -382,7 +382,7 @@
 				"textCase": "none"
 			}
 		},
-		"body semi bold": {
+		"bodysemibold": {
 			"type": "custom-fontStyle",
 			"value": {
 				"fontSize": 13,
@@ -414,7 +414,7 @@
 				"textCase": "none"
 			}
 		},
-		"captions bold": {
+		"captionsbold": {
 			"type": "custom-fontStyle",
 			"value": {
 				"fontSize": 11,
@@ -430,7 +430,7 @@
 				"textCase": "none"
 			}
 		},
-		"captions semi bold": {
+		"captionssemibold": {
 			"type": "custom-fontStyle",
 			"value": {
 				"fontSize": 11,
@@ -571,7 +571,7 @@
 				"value": "none"
 			}
 		},
-		"h1 bold": {
+		"h1bold": {
 			"fontSize": {
 				"type": "dimension",
 				"value": 48
@@ -617,7 +617,7 @@
 				"value": "none"
 			}
 		},
-		"h1 semi bold": {
+		"h1semibold": {
 			"fontSize": {
 				"type": "dimension",
 				"value": 48
@@ -709,7 +709,7 @@
 				"value": "none"
 			}
 		},
-		"h2 bold": {
+		"h2bold": {
 			"fontSize": {
 				"type": "dimension",
 				"value": 40
@@ -755,7 +755,7 @@
 				"value": "none"
 			}
 		},
-		"h2 semi bold": {
+		"h2semibold": {
 			"fontSize": {
 				"type": "dimension",
 				"value": 40
@@ -847,7 +847,7 @@
 				"value": "none"
 			}
 		},
-		"h3 bold": {
+		"h3bold": {
 			"fontSize": {
 				"type": "dimension",
 				"value": 33
@@ -893,7 +893,7 @@
 				"value": "none"
 			}
 		},
-		"h3 semi bold": {
+		"h3semibold": {
 			"fontSize": {
 				"type": "dimension",
 				"value": 33
@@ -985,7 +985,7 @@
 				"value": "none"
 			}
 		},
-		"h4 bold": {
+		"h4bold": {
 			"fontSize": {
 				"type": "dimension",
 				"value": 28
@@ -1031,7 +1031,7 @@
 				"value": "none"
 			}
 		},
-		"h4 semi bold": {
+		"h4semibold": {
 			"fontSize": {
 				"type": "dimension",
 				"value": 28
@@ -1123,7 +1123,7 @@
 				"value": "none"
 			}
 		},
-		"title01 bold": {
+		"title01bold": {
 			"fontSize": {
 				"type": "dimension",
 				"value": 23
@@ -1169,7 +1169,7 @@
 				"value": "none"
 			}
 		},
-		"title01 semi bold": {
+		"title01semibold": {
 			"fontSize": {
 				"type": "dimension",
 				"value": 23
@@ -1261,7 +1261,7 @@
 				"value": "none"
 			}
 		},
-		"title02 bold": {
+		"title02bold": {
 			"fontSize": {
 				"type": "dimension",
 				"value": 19
@@ -1307,7 +1307,7 @@
 				"value": "none"
 			}
 		},
-		"title02 semi bold": {
+		"title02semibold": {
 			"fontSize": {
 				"type": "dimension",
 				"value": 19
@@ -1399,7 +1399,7 @@
 				"value": "none"
 			}
 		},
-		"title03 bold": {
+		"title03bold": {
 			"fontSize": {
 				"type": "dimension",
 				"value": 16
@@ -1445,7 +1445,7 @@
 				"value": "none"
 			}
 		},
-		"title03 semi bold": {
+		"title03semibold": {
 			"fontSize": {
 				"type": "dimension",
 				"value": 16
@@ -1537,7 +1537,7 @@
 				"value": "none"
 			}
 		},
-		"body bold": {
+		"bodybold": {
 			"fontSize": {
 				"type": "dimension",
 				"value": 13
@@ -1583,7 +1583,7 @@
 				"value": "none"
 			}
 		},
-		"body semi bold": {
+		"bodysemibold": {
 			"fontSize": {
 				"type": "dimension",
 				"value": 13
@@ -1675,7 +1675,7 @@
 				"value": "none"
 			}
 		},
-		"captions bold": {
+		"captionsbold": {
 			"fontSize": {
 				"type": "dimension",
 				"value": 11
@@ -1721,7 +1721,7 @@
 				"value": "none"
 			}
 		},
-		"captions semi bold": {
+		"captionssemibold": {
 			"fontSize": {
 				"type": "dimension",
 				"value": 11
