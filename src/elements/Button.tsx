@@ -13,6 +13,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	variant: ButtonVariant;
 	bestValue?: Boolean;
 	className?: string;
+	onClick?: () => void;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -20,14 +21,15 @@ const Button: React.FC<ButtonProps> = ({
 	variant = "primary",
 	bestValue,
 	className,
+	onClick,
 	...rest
 }) => {
 	const getButtonClasses = (dynamicClass: any) => {
 		switch (variant) {
 			case "primary":
-				return "py-2 px-4 bg-primary text-white rounded-xl";
+				return "py-2 px-4 bg-primary text-white rounded-xl hover:bg-secondary hover:transition-all";
 			case "secondary":
-				return "py-2 px-4 bg-secondary text-white rounded-xl";
+				return "py-2 px-4 bg-secondary text-white rounded-xl hover:bg-secondary hover:transition-all";
 			case "outlined":
 				return "py-2 px-4 border-2 border-prime text-black rounded-xl font-bold";
 			case "starBtn":
@@ -37,14 +39,15 @@ const Button: React.FC<ButtonProps> = ({
 					? "py-2 px-4 bg-indicator1 text-black rounded-xl"
 					: "py-2 px-4 bg-indicator2 text-black rounded-xl";
 			default:
-				return "py-2 px-4 bg-none text-white";
+				return "py-2 px-4 bg-none text-white hover:bg-secondary hover:transition-all";
 		}
 	};
 
 	return (
 		<button
+			onClick={onClick}
 			className={`${
-				variant === "indicator" && "flex w-32 text-xs"
+				variant === "indicator" && "flex w-32 text-xs transiti"
 			} ${getButtonClasses(bestValue)} ${className}`}
 			{...rest}>
 			{variant === "indicator" && (

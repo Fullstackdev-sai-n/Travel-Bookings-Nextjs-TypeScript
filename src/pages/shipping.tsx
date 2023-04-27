@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Progress from "@/components/Progress";
 import SideTextIcon from "@/components/SideTextIcon";
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import Ship from "../assets/ship.svg";
 import SearchBar from "@/components/SearchBar";
 import SideFilters from "@/components/SideFilters";
@@ -12,9 +12,41 @@ import Icon from "@/elements/Icon";
 import ChatIcon from "../assets/Chat button.svg";
 import { seoShippingProps } from "@/utils/pageProps";
 import Seo from "@/components/Seo";
+import { useRouter } from "next/router";
 
 const Shipping = () => {
 	const { shipping, tabData, filtersData } = data;
+	const [formData, setFormData] = useState({});
+	const [search, setSearch] = useState([]);
+	const [isEdit, setIsEdit] = useState(false);
+
+	const router = useRouter();
+
+	useEffect(() => {
+		setFormData(JSON.parse(localStorage?.getItem("formData")));
+	}, []);
+
+	const filteredData = shipping.filter((item) =>
+		item?.startText?.toLowerCase().includes(formData?.origin?.toLowerCase())
+	);
+
+	const filters = (listsData: string, target: string) => {
+		const filterData = listsData.filter((item: string | any) =>
+			item?.startText?.toLowerCase().includes(target.toLowerCase())
+		);
+		return setSearch(filterData);
+	};
+	const editing = () => {
+		return setIsEdit(true);
+	};
+
+	const handleSelect = (index: string | number | any) => {
+		const dataClick = isEdit ? search[index] : filteredData[index];
+		router.push("/bookings");
+		localStorage.setItem("selected-list-item", JSON.stringify(dataClick));
+		return dataClick;
+	};
+
 	return (
 		<Fragment>
 			<Seo {...seoShippingProps} />
@@ -38,7 +70,12 @@ const Shipping = () => {
 						<Progress currentStep={3} totalSteps={5} />
 					</section>
 					<section className="mt-14">
-						<SearchBar edit={true} />
+						<SearchBar
+							filters={(target) => filters(shipping, target)}
+							initialValues={formData}
+							edit={true}
+							editing={editing}
+						/>
 					</section>
 					<div className="w-full h-prime my-5 bg-prime"></div>
 					<section className="grid md:grid-cols-sCSectionMd lg:grid-cols-sCSection gap-0 md:gap-12">
@@ -49,19 +86,37 @@ const Shipping = () => {
 						<div>
 							<TabIndex tabData={tabData} />
 							<div className="mt-10">
-								{shipping.map((ship, index) => {
-									return (
-										<ShippingCard
-											isVariant={ship.isVariant}
-											key={index}
-											indicatorText={ship.indicatorText}
-											estDays={ship.estDays}
-											totalPrice={ship.totalPrice}
-											startText={ship.startText}
-											destinationText={ship.destinationText}
-										/>
-									);
-								})}
+								{!isEdit
+									? filteredData?.map((ship, i) => {
+											return (
+												<ShippingCard
+													isVariant={ship.isVariant}
+													key={i}
+													indicatorText={ship.indicatorText}
+													estDays={ship.estDays}
+													totalPrice={ship.totalPrice}
+													startText={ship.startText}
+													destinationText={ship.destinationText}
+													providerName={ship.providerName}
+													onClick={() => handleSelect(i)}
+												/>
+											);
+									  })
+									: search?.map((ship: any, index) => {
+											return (
+												<ShippingCard
+													isVariant={ship.isVariant}
+													key={index}
+													indicatorText={ship.indicatorText}
+													estDays={ship.estDays}
+													totalPrice={ship.totalPrice}
+													startText={ship.startText}
+													destinationText={ship.destinationText}
+													providerName={ship.providerName}
+													onClick={() => handleSelect(index)}
+												/>
+											);
+									  })}
 							</div>
 						</div>
 					</section>

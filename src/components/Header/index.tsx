@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Logo from "../../assets/Logo.svg";
 import DollarSquare from "../../assets/dollarsquare.svg";
 import Button from "@/elements/Button";
+import Link from "next/link";
 
 const Header = () => {
 	const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -10,7 +11,9 @@ const Header = () => {
 	return (
 		<header>
 			<nav className="sm:flex justify-between">
-				<Icon src={Logo} alt="logo" imageClass="" />
+				<Link href="/">
+					<Icon src={Logo} alt="logo" imageClass="" />
+				</Link>
 				<div className="grid mt-4 sm:mt-0 sm:flex gap-4">
 					{!isLoggedIn && !isBooking && (
 						<>

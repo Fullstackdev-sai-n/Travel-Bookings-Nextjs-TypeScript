@@ -5,10 +5,11 @@ import React from "react";
 
 interface PriceDetails {
 	title: string;
-	sellerPrice: string;
-	insurancePrice: string;
-	platformFee: string;
-	totalPrice: string;
+	sellerPrice: Number;
+	insurancePrice: Number;
+	platformFee: Number;
+	totalPrice: Number;
+	onClick: () => void;
 }
 
 const PriceDetails: React.FC<PriceDetails> = ({
@@ -17,6 +18,7 @@ const PriceDetails: React.FC<PriceDetails> = ({
 	insurancePrice,
 	platformFee,
 	totalPrice,
+	onClick,
 }) => {
 	return (
 		<div className="grid px-8 py-9 bg-white rounded-2xl shadow-primary">
@@ -84,7 +86,10 @@ const PriceDetails: React.FC<PriceDetails> = ({
 					${totalPrice}
 				</Typography>
 			</div>
-			<Button className="grid place-items-center py-2" variant="secondary">
+			<Button
+				onClick={onClick}
+				className="grid place-items-center py-2"
+				variant="secondary">
 				<Typography className="text-white m-auto" tag="title01bold">
 					Checkout
 				</Typography>

@@ -28,7 +28,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 	background-position: left center;
 	background-size: 24px 24px;
 	pointer-events: visible;
-	visibility: hidden;
+	position: absolute;
+	left: 0;
+	right: auto;
+	opacity: 0;
 }
 
 @media (max-width: 360px) {

@@ -1,11 +1,10 @@
-import Image from "next/image";
 import React from "react";
 import Icon from "./Icon";
 import StarFill from "../assets/starfill.svg";
 import StarEmpty from "../assets/star.svg";
 
 interface StarRatingProps {
-	rating: number; // Value of the rating// Path to the star icon image
+	rating: number;
 	className: string;
 	imageClass: string;
 }

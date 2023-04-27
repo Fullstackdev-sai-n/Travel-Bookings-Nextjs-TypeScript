@@ -32,7 +32,6 @@ export default function Home() {
 					<Icon src={ChatIcon} imageClass="w-32 h-32" alt="Chat-Icon" />
 				</div>
 				<Header />
-
 				<main>
 					<section className="text-center py-28">
 						<Typography tag="h1semibold" className="text-black">

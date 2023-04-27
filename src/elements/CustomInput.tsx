@@ -7,8 +7,13 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	inputClass?: string;
 	inputContainer?: string;
 	type: string;
-	value?: string;
-	onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+	value?: string | any;
+	placeholder?: string | any;
+	onChange: (event: ChangeEvent<HTMLInputElement>) => void | any;
+	containerRef: any;
+	id?: string;
+	imageClass?: string;
+	textClass?: string;
 }
 
 const CustomInput: React.FC<InputProps> = ({
@@ -19,17 +24,23 @@ const CustomInput: React.FC<InputProps> = ({
 	inputContainer,
 	type,
 	value,
+	containerRef,
+	placeholder,
+	id,
+	imageClass,
+	textClass,
 	...props
 }) => {
 	const element = useRef(null);
 	return (
-		<div className={`relative z-50 px-7 ${inputContainer}`}>
+		<div ref={containerRef} className={`relative z-50 px-7 ${inputContainer}`}>
 			<input
-				className={`w-32 bg-none sm:max-w-xs md:w-full border-none outline-none h-14 text-gray-400 font-normal text-xl border-r-primary ${inputClass}`}
+				className={`pl-4 w-32 bg-none sm:max-w-xs md:w-full border-none outline-none h-14 text-gray-400 font-normal text-xl border-r-primary ${inputClass}`}
 				onChange={onChange}
+				id={id}
 				type={type}
 				value={value}
-				placeholder=""
+				placeholder={placeholder}
 				onFocus={(event) => {
 					if (event && element.current)
 						element.current.getElementsByTagName("div")[1].style.display =
@@ -41,11 +52,11 @@ const CustomInput: React.FC<InputProps> = ({
 				<SideTextIcon
 					elementRef={element}
 					src={IconSrc}
-					imageClass="w-5 h-5"
+					imageClass={`w-5 h-5 ${imageClass}`}
 					alt="Icon"
 					tag="title02"
 					text={placeholderText}
-					textClass="text-gray-400 pl-2"
+					textClass={`text-gray-400 pl-2 ${textClass}`}
 				/>
 			</div>
 		</div>

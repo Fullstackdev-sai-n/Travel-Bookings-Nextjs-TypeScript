@@ -92,7 +92,7 @@ const BookingSummary: React.FC<BookingSummaryProps> = ({
 					tag="title02semibold">
 					Load
 				</Typography>
-				<div className="grid place-items-center grid-cols-12 sm:grid-cols-2 grid-cols-bsLoad">
+				<div className="grid place-items-center grid-cols-12 sm:grid-cols-bsLoad">
 					<div className="ml-auto">
 						<Typography
 							color="#5C5C5C"

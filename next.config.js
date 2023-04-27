@@ -4,7 +4,6 @@ const nextConfig = {
 	async headers() {
 		return [
 			{
-				// add this code to include the custom SVG favicon
 				source: "/favicon.ico",
 				headers: [
 					{
